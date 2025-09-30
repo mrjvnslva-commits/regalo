@@ -10,23 +10,19 @@
       background: radial-gradient(circle at center, #001, #000);
       color: #fff;
       text-align: center;
-      overflow: hidden;
-    }
+      overflow: hidden;}
 
     header {
-      padding: 20px;
-    }
-
+      padding: 20px;}
+    
     header h1 {
       font-size: 30px;
       color: #ff3b3b;
-      text-shadow: 0 0 15px rgba(255,59,59,0.7);
-    }
-
+      text-shadow: 0 0 15px rgba(255,59,59,0.7);}
+    
     header p {
       font-size: 18px;
-      opacity: 0.9;
-    }
+      opacity: 0.9;}
 
     /* pista */
     .track {
@@ -38,8 +34,7 @@
       background: linear-gradient(90deg, #333, #111);
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(0,0,0,0.7);
-      overflow: hidden;
-    }
+      overflow: hidden;}
 
     .lane {
       position: absolute;
@@ -47,8 +42,7 @@
       left: 0;
       right: 0;
       height: 20px;
-      border-top: 3px dashed #fff;
-    }
+      border-top: 3px dashed #fff;}
 
     .car {
       position: absolute;
@@ -59,8 +53,7 @@
       background: linear-gradient(90deg,#3b82f6,#60a5fa);
       border-radius: 10px;
       animation: drive 6s linear infinite;
-      box-shadow: 0 8px 20px rgba(59,130,246,0.6);
-    }
+      box-shadow: 0 8px 20px rgba(59,130,246,0.6);}
 
     .car::before, .car::after {
       content: '';
@@ -70,24 +63,22 @@
       height: 26px;
       border-radius: 50%;
       background: #000;
-      border: 3px solid #666;
-    }
-
+      border: 3px solid #666;}
+    
     .car::before { left: 10px; }
     .car::after { right: 10px; }
 
     @keyframes drive {
       0% { left: -120px; }
-      100% { left: 100%; }
-    }
+      100% { left: 100%; } }
+    
 
     /* flores */
     .flowers {
       font-size: 34px;
       margin: 20px 0;
-      text-shadow: 0 0 12px rgba(59,130,246,0.7);
-    }
-
+      text-shadow: 0 0 12px rgba(59,130,246,0.7);}
+    
     /* mensaje */
     .message {
       margin: 20px auto;
@@ -95,14 +86,12 @@
       padding: 20px;
       border-radius: 12px;
       background: rgba(59,130,246,0.15);
-      border: 1px solid rgba(59,130,246,0.4);
-    }
+      border: 1px solid rgba(59,130,246,0.4);}
 
     .message p {
       font-size: 20px;
-      line-height: 1.5;
-    }
-
+      line-height: 1.5;}
+    
     /* corazones flotantes */
     .heart {
       position: fixed;
@@ -110,9 +99,8 @@
       color: #ff3b3b;
       font-size: 24px;
       animation: float 6s linear infinite;
-      opacity: 0.7;
-    }
-
+      opacity: 0.7;}
+    
     @keyframes float {
       0% { transform: translateY(0) scale(1); opacity: 0.7; }
       100% { transform: translateY(-120vh) scale(1.8); opacity: 0; }
