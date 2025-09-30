@@ -10,39 +10,45 @@
       background: radial-gradient(circle at center, #001, #000);
       color: #fff;
       text-align: center;
-      overflow: hidden;}
+      overflow-x: hidden;
+    }
 
     header {
-      padding: 20px;}
-    
+      padding: 25px;
+    }
+
     header h1 {
-      font-size: 30px;
+      font-size: 34px;
       color: #ff3b3b;
-      text-shadow: 0 0 15px rgba(255,59,59,0.7);}
-    
+      text-shadow: 0 0 15px rgba(255,59,59,0.7);
+    }
+
     header p {
       font-size: 18px;
-      opacity: 0.9;}
+      opacity: 0.9;
+    }
 
     /* pista */
     .track {
-      position: relative;
       margin: 40px auto;
       width: 90%;
       max-width: 600px;
-      height: 180px;
+      height: 200px;
       background: linear-gradient(90deg, #333, #111);
       border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.7);
-      overflow: hidden;}
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+    }
 
     .lane {
       position: absolute;
-      top: 80px;
+      top: 90px;
       left: 0;
       right: 0;
       height: 20px;
-      border-top: 3px dashed #fff;}
+      border-top: 3px dashed #fff;
+    }
 
     .car {
       position: absolute;
@@ -50,10 +56,11 @@
       left: -120px;
       width: 100px;
       height: 50px;
-      background: linear-gradient(90deg,#3b82f6,#60a5fa);
       border-radius: 10px;
+      background: linear-gradient(90deg,#3b82f6,#60a5fa);
       animation: drive 6s linear infinite;
-      box-shadow: 0 8px 20px rgba(59,130,246,0.6);}
+      box-shadow: 0 8px 20px rgba(59,130,246,0.6);
+    }
 
     .car::before, .car::after {
       content: '';
@@ -63,22 +70,24 @@
       height: 26px;
       border-radius: 50%;
       background: #000;
-      border: 3px solid #666;}
-    
+      border: 3px solid #666;
+    }
+
     .car::before { left: 10px; }
     .car::after { right: 10px; }
 
     @keyframes drive {
       0% { left: -120px; }
-      100% { left: 100%; } }
-    
+      100% { left: 100%; }
+    }
 
-    /* flores */
+    /* flores azules */
     .flowers {
       font-size: 34px;
       margin: 20px 0;
-      text-shadow: 0 0 12px rgba(59,130,246,0.7);}
-    
+      text-shadow: 0 0 12px rgba(59,130,246,0.7);
+    }
+
     /* mensaje */
     .message {
       margin: 20px auto;
@@ -86,12 +95,14 @@
       padding: 20px;
       border-radius: 12px;
       background: rgba(59,130,246,0.15);
-      border: 1px solid rgba(59,130,246,0.4);}
+      border: 1px solid rgba(59,130,246,0.4);
+    }
 
     .message p {
       font-size: 20px;
-      line-height: 1.5;}
-    
+      line-height: 1.5;
+    }
+
     /* corazones flotantes */
     .heart {
       position: fixed;
@@ -99,8 +110,9 @@
       color: #ff3b3b;
       font-size: 24px;
       animation: float 6s linear infinite;
-      opacity: 0.7;}
-    
+      opacity: 0.7;
+    }
+
     @keyframes float {
       0% { transform: translateY(0) scale(1); opacity: 0.7; }
       100% { transform: translateY(-120vh) scale(1.8); opacity: 0; }
@@ -115,46 +127,22 @@
 
   <div class="track">
     <div class="lane"></div>
-    <div class="car" id="car"></div>
+    <div class="car"></div>
   </div>
 
   <div class="flowers">🌸💙🌸💙🌸💙🌸</div>
 
   <div class="message">
     <p>
-      DAVIDS, eres mi pista infinita, mi velocidad y mi destino.  
-      En este Día del Enamorado, <strong>mi corazón corre hacia ti</strong>.
+      DAVIDS, en esta pista llamada vida, eres mi copiloto favorito.  
+      En este Día del Enamorado, <strong>mi corazón acelera por ti</strong>.
     </p>
   </div>
 
   <div class="flowers">💙🌸💙🌸💙🌸💙</div>
 
   <script>
-    // --- sonido de motor automático cada vez que pasa el auto ---
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
-    const ctx = AudioContext ? new AudioContext() : null;
-
-    function playEngine(){
-      if(!ctx) return;
-      const now = ctx.currentTime;
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(90, now);
-      osc.frequency.exponentialRampToValueAtTime(900, now + 0.5);
-      gain.gain.setValueAtTime(0.0001, now);
-      gain.gain.exponentialRampToValueAtTime(0.25, now + 0.1);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 1);
-      osc.connect(gain); gain.connect(ctx.destination);
-      osc.start(now); osc.stop(now + 1);
-    }
-
-    if(ctx){
-      if(ctx.state === "suspended") ctx.resume();
-      setInterval(playEngine, 6000); // cada vez que el auto pasa
-    }
-
-    // --- corazones flotando ---
+    // corazones flotantes
     function createHeart(){
       const heart = document.createElement("div");
       heart.className = "heart";
