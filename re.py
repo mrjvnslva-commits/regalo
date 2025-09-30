@@ -4,29 +4,25 @@
   <meta charset="utf-8">
   <title>Regalo Hot Wheels para DAVIDS</title>
   <style>
-    body {
-      margin: 0;
+    body { margin: 0;
       font-family: 'Arial', sans-serif;
       background: radial-gradient(circle at center, #001, #000);
       color: #fff;
       text-align: center;
-      overflow-x: hidden;
-    }
+      overflow-x: hidden;}
 
-    header {
-      padding: 25px;
-    }
+    header {padding: 25px;}
 
     header h1 {
       font-size: 34px;
       color: #ff3b3b;
-      text-shadow: 0 0 15px rgba(255,59,59,0.7);
-    }
+      text-shadow: 0 0 15px rgba(255,59,59,0.7);}
+    
 
     header p {
       font-size: 18px;
-      opacity: 0.9;
-    }
+      opacity: 0.9;}
+    
 
     /* pista */
     .track {
@@ -38,8 +34,8 @@
       border-radius: 20px;
       box-shadow: 0 0 25px rgba(0,0,0,0.6);
       position: relative;
-      overflow: hidden;
-    }
+      overflow: hidden;}
+    
 
     .lane {
       position: absolute;
@@ -47,8 +43,8 @@
       left: 0;
       right: 0;
       height: 20px;
-      border-top: 3px dashed #fff;
-    }
+      border-top: 3px dashed #fff;}
+    
 
     .car {
       position: absolute;
@@ -59,8 +55,8 @@
       border-radius: 10px;
       background: linear-gradient(90deg,#3b82f6,#60a5fa);
       animation: drive 6s linear infinite;
-      box-shadow: 0 8px 20px rgba(59,130,246,0.6);
-    }
+      box-shadow: 0 8px 20px rgba(59,130,246,0.6);}
+    
 
     .car::before, .car::after {
       content: '';
@@ -70,23 +66,23 @@
       height: 26px;
       border-radius: 50%;
       background: #000;
-      border: 3px solid #666;
-    }
+      border: 3px solid #666;}
+    
 
     .car::before { left: 10px; }
     .car::after { right: 10px; }
 
     @keyframes drive {
       0% { left: -120px; }
-      100% { left: 100%; }
-    }
+      100% { left: 100%; }}
 
+    
     /* flores azules */
     .flowers {
       font-size: 34px;
       margin: 20px 0;
-      text-shadow: 0 0 12px rgba(59,130,246,0.7);
-    }
+      text-shadow: 0 0 12px rgba(59,130,246,0.7);}
+    
 
     /* mensaje */
     .message {
@@ -95,13 +91,13 @@
       padding: 20px;
       border-radius: 12px;
       background: rgba(59,130,246,0.15);
-      border: 1px solid rgba(59,130,246,0.4);
-    }
+      border: 1px solid rgba(59,130,246,0.4);}
+    
 
     .message p {
       font-size: 20px;
-      line-height: 1.5;
-    }
+      line-height: 1.5;}
+    
 
     /* corazones flotantes */
     .heart {
@@ -110,13 +106,13 @@
       color: #ff3b3b;
       font-size: 24px;
       animation: float 6s linear infinite;
-      opacity: 0.7;
-    }
+      opacity: 0.7;}
+    
 
     @keyframes float {
       0% { transform: translateY(0) scale(1); opacity: 0.7; }
-      100% { transform: translateY(-120vh) scale(1.8); opacity: 0; }
-    }
+      100% { transform: translateY(-120vh) scale(1.8); opacity: 0; }}
+    
   </style>
 </head>
 <body>
@@ -151,8 +147,8 @@
       heart.style.fontSize = (20 + Math.random()*20) + "px";
       heart.style.animationDuration = (4 + Math.random()*4) + "s";
       document.body.appendChild(heart);
-      setTimeout(()=>heart.remove(), 8000);
-    }
+      setTimeout(()=>heart.remove(), 8000);}
+    
     setInterval(createHeart, 800);
   </script>
 </body>
